@@ -21,7 +21,6 @@ node{
     sh "echo 'deploy to UAT'  "
     deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.30.150:8080/')], contextPath: null, war: 'target/*war'
 }
-  }
   stage('6approvalGate'){
     sh "echo 'ready for review' "
     timeout(time:5, unit:'DAYS') {
